@@ -2,13 +2,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {% load staticfiles %}
+  {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Shlok Parida</title>
+    <title>Shlok's Blog'</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -37,7 +37,7 @@
   <body>
     <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand active" href="{% url 'home' %}">Shlok Parida</a>
+  <a class="navbar-brand" href="{% url 'home' %}">Shlok Parida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -45,42 +45,34 @@
     <div class="navbar-nav ml-auto">
       <a class="nav-item nav-link" href="https://github.com/ShlokParida">Github </a>
       <a class="nav-item nav-link" href="{% static 'Shlok Parida 2018 (1).pdf' %}">Resume</a>
-      <a class="nav-item nav-link" href="{% url 'allblogs'%}">Blog</a>
+      <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
     </div>
   </div>
 </nav>
 </header>
 
 <main role="main">
+<div class="container">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Hi, I'm Shlok.</h1>
-      <p class="lead text-muted">Hey, my name is Shlok Parida. I am a Freelance Web Developer. Ive Grduated from Symbiosis Institute Of Technology with a degree of Engineering in Electronics and Telecommunications. I love coding and i love music. This Is My Portfolio.</p>
-      <p>
-        <a href="mailto:shlokparida@gmail.com" class="btn btn-primary my-2">Contact Me</a>
-      </p>
-      <img src="{% static 'ShlokProfile.jpg' %}" height=300/>
+<h1 class = "text-center pt-3">Welcome to Shlok's Blog</h1>
+<br />
+<br />
+<h2>Latest Blog Posts</h2>
+<hr />
+{% for blog in blogs.all %}
+    <a href = "{% url 'detail' blog.id %}">
+<div class="card mb-3">
+      <img class="card-img-top" src="{{blog.blog_image.url}}">
+    <div class="card-body">
+       <h5 class="card-title">{{blog.blog_title}}</h5>
+    </a>
+    <p class="card-text">{{blog.summary}}</p>
+    <p class="card-text"><small class="text-muted">{{blog.pub_date.date}}</small></p>
     </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-      
-     {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class = "card-img-top" src = "{{job.image.url}}">
-            <div class="card-body">
-              <h5 class = "card-title">{{job.job_title}}</h5>
-              <p class = "card-text">{{job.summary}}</p>
-             </div>
-          </div>
-          </div>
-          {% endfor %}
-         </div>        
+</div>
+<br />
+{% endfor %}
+</div>
 </main>
 
 <footer class="text-muted">
@@ -93,4 +85,3 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
-{% comment %} svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
