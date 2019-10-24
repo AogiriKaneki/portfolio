@@ -13,26 +13,8 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
     <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'neo.css' %}"
 
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    
   </head>
   <body>
     <header>
@@ -50,9 +32,7 @@
   </div>
 </nav>
 </header>
-
 <main role="main">
-
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Hi, I'm Shlok.</h1>
@@ -62,11 +42,9 @@
       </p>
       <img src="{% static 'ShlokProfile.jpg' %}" height=300/>
     </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
+    <br />
+    <br />
+    <br />
       <div class="row">
       
      {% for job in jobs.all %}
@@ -80,7 +58,9 @@
           </div>
           </div>
           {% endfor %}
-         </div>        
+         </div> 
+
+  </section>       
 </main>
 
 <footer class="text-muted">
