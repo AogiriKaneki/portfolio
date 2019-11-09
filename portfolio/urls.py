@@ -19,11 +19,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 import music.views
 import jobs.views
+import contact.views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',jobs.views.home,name = 'home'),
+    path('contactme/',contact.views.contactme,name = 'contactme'),
     path('blog/', include('blog.urls')),
     path('music/', include('music.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

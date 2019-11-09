@@ -1,0 +1,72 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+  {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Shlok's Blog'</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="{% static 'neo.css' %}">
+</head>
+
+  <body>
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'home' %}">Shlok Parida</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link" href="https://github.com/ShlokParida" target="_blank">Github </a>
+      <a class="nav-item nav-link" href="{% static 'Shlok Parida 2018 (1).pdf' %}" target="_blank">Resume</a>
+      <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
+      <a class="nav-item nav-link" href="{% url 'alltracks'%}">Music</a>
+    </div>
+  </div>
+</nav>
+</header>
+  </body>
+
+  <main>
+    <br />
+    <br />
+      <h2 class = "text-primary">CONTACT ME</h2>
+      <div class="row">
+      <div class="col-lg-6" style="width: 200px;">
+          <div class="bs-component">
+              <form>
+                <fieldset>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" name="emailid" aria-describedby="emailHelp" placeholder="Enter email" >
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="exampleTextarea">Message</label>
+                    <textarea class="form-control" rows="3" name="fulltext"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                  </div>
+                  </fieldset>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </fieldset>
+              </form>
+      </div>
+    </div>
+    </div>
+    
+      
+  </main>
+  </html>
+  

@@ -38,10 +38,14 @@
 <main role="main">
 <div class="container">
 
-<h1 class = "text-center pt-3">Welcome to Shlok's Blog</h1>
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading text-primary">Welcome to Shlok's Blog</h1>
+    </div>
+  </section>
 <br />
 <br />
-<h2>Latest Blog Posts</h2>
+<h3 class="text-warning">Latest Blog Posts</h3>
 <hr />
 {% for blog in blogs.all %}
     <a href = "{% url 'detail' blog.id %}">
